@@ -1,6 +1,6 @@
 # Thread Library
 
-Thread Library is a simple C library that provides basic threading functionalities. It allows you to create threads with or without arguments, set thread priorities, manage thread synchronization with mutexes, and more.
+Thread Library is a simple C library that provides basic threading functionalities. It allows you to create threads with or without arguments, set thread priorities and more.
 
 ## Table of Contents
 
