@@ -73,7 +73,6 @@ void yieldThread(void) {
     }
 
     currentThread = nextThread;
-    printf("Yield current = %d, prev = %d\n", currentThread, prevThread);
 
     if (prevThread != -1 && currentThread != -1 && prevThread != currentThread) {
         threads[prevThread].status = READY;
@@ -146,13 +145,6 @@ void sleepThread(int sec) {
     sleep(sec);
     threads[currentThread].status = READY;
     yieldThread();
-}
-
-struct statistics *getThreadStatus(int threadID) {
-    if (threadID >= 0 && threadID < MAX_THREADS) {
-        return &threads[threadID].stat;
-    }
-    return NULL;
 }
 
 int getID(void) {
