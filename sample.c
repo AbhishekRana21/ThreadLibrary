@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 void normalThread(void) {
-    printf("Normal Thread is running\n");
+    printf("Normal thread is running\n");
     printf("Thread ID = %d\n", getID());
 }
 
