@@ -2,17 +2,15 @@
 #include <stdio.h>
 
 void normalThread(void) {
-    for (int i = 0; i < 5; ++i) {
-        printf("Thread %d: %d\n", getID(), i);
-    }
+    printf("Normal Thread is running\n");
+    printf("Thread ID = %d\n", getID());
 }
 
 void *threadWithArgs(void *arg) {
     int *value = (int *)arg;
-    for (int i = 0; i < 5; ++i) {
-        printf("Thread %d: %d\n", getID(), *value);
-    }
-    return NULL;
+    printf("Thread with arguments is running\n");
+    printf("Thread ID = %d\n", getID());
+    printf("Argument value = %d\n", *value);
 }
 
 int main(void) {
