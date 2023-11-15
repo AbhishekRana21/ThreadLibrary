@@ -6,9 +6,9 @@ void normalThread(void) {
     printf("Thread ID = %d\n", getID());
 }
 
-void *threadWithArgs(void *arg) {
+void *threadWithArg(void *arg) {
     int *value = (int *)arg;
-    printf("Thread with arguments is running\n");
+    printf("Thread with argument is running\n");
     printf("Thread ID = %d\n", getID());
     printf("Argument value = %d\n", *value);
 }
@@ -17,7 +17,7 @@ int main(void) {
     initThreadLibrary();
     int priority1 = 0, priority2 = 1, value = 7;
     int thread1 = createThread(normalThread, priority1);
-    int thread2 = createThreadWithArgs(threadWithArgs, &value, priority2);
+    int thread2 = createThreadWithArg(threadWithArg, &value, priority2);
 
     start();
 
