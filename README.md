@@ -13,7 +13,7 @@ Thread Library is a simple C library that provides basic threading functionaliti
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/thread-library.git
+    git clone https://github.com/AbhishekRana21/ThreadLibrary.git
     ```
 
 2. Compile the source files:
