@@ -30,7 +30,7 @@ typedef struct {
 
 void initThreadLibrary(void);
 int createThread(void (*function)(void), int);
-int createThreadWithArgs(void *(*function)(void *), void *arg, int);
+int createThreadWithArg(void *(*function)(void *), void *arg, int);
 void yieldThread(void);
 void runThread(int threadID);
 void runScheduler(void);
