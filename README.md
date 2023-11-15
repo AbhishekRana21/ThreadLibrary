@@ -1,6 +1,6 @@
 # Thread Library
 
-Thread Library is a simple C library that provides basic threading functionalities. It allows you to create threads with or without arguments, set thread priorities and more.
+Thread Library is a simple C library that provides basic threading functionalities. It allows you to create threads with or without argument, set thread priorities and more.
 
 ## Table of Contents
 
@@ -64,15 +64,15 @@ int main(void) {
 }
 ```
 
-#### Thread with Arguments
+#### Thread with Argument
 
 ```c
 #include "ThreadLibrary.h"
 #include <stdio.h>
 
-void *threadWithArgs(void *arg) {
+void *threadWithArg(void *arg) {
     int *value = (int *)arg;
-    printf("Thread with arguments is running\n");
+    printf("Thread with argument is running\n");
     printf("Thread ID = %d\n", getID());
     printf("Argument value = %d\n", *value);
 }
@@ -80,7 +80,7 @@ void *threadWithArgs(void *arg) {
 int main(void) {
     initThreadLibrary();
     int priority = 1, value = 7;
-    int thread2 = createThreadWithArgs(threadWithArgs, &value, priority);
+    int thread2 = createThreadWithArg(threadWithArg, &value, priority);
 
     start();
 
