@@ -36,7 +36,7 @@ int createThread(void (*function)(void), int pri) {
     return -1;  // No available thread slot
 }
 
-int createThreadWithArgs(void *(*function)(void *), void *arg, int pri) {
+int createThreadWithArg(void *(*function)(void *), void *arg, int pri) {
     for (int i = 0; i < MAX_THREADS; ++i) {
         if (threads[i].status == FINISHED) {
             getcontext(&threads[i].context);
