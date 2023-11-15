@@ -4,8 +4,8 @@
 #include <ucontext.h>
 #include <time.h>
 
-#define MAX_THREADS 10
-#define STACK_SIZE 4096
+#define MAX_THREADS 25
+#define STACK_SIZE 1024
 #define DEFAULT_PRIORITY 0
 
 enum ThreadStatus {
@@ -13,19 +13,6 @@ enum ThreadStatus {
     RUNNING,
     BLOCKED,
     FINISHED
-};
-
-struct statistics {
-    int ID;
-    enum ThreadStatus state;
-    int burst;
-    int total_exec_time;
-    int total_slp_time;
-    float avg_time_quant;
-    float avg_wait_time;
-    int RedTimeTotal;
-    clock_t RunTimeStart;
-    clock_t RedTimeStart;
 };
 
 typedef struct {
@@ -39,7 +26,6 @@ typedef struct {
     void *result;
     int joinID;
     int mutex;  // Simple mutex (0: unlocked, 1: locked)
-    struct statistics stat;
 } Thread;
 
 void initThreadLibrary(void);
@@ -51,12 +37,9 @@ void runScheduler(void);
 void start(void);
 void lockMutex(int threadID);
 void unlockMutex(int threadID);
-void waitCondition(int threadID, int conditionVariable);
-void signalCondition(int conditionVariable);
 void setThreadPriority(int threadID, int priority);
 void deleteThread(int threadID);
 void sleepThread(int sec);
-struct statistics *getThreadStatus(int threadID);
 int getID(void);
 void cleanThread(void);
 void joinThread(int threadID);
