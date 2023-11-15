@@ -16,13 +16,19 @@ Thread Library is a simple C library that provides basic threading functionaliti
     git clone https://github.com/AbhishekRana21/ThreadLibrary.git
     ```
 
-2. Compile the source files:
+2. Change the directory:
+
+    ```bash
+    cd ThreadLibrary
+    ```
+
+3. Compile the source files:
 
     ```bash
     gcc ThreadLibrary.c sample.c -o exe
     ```
 
-3. Run the executable:
+4. Run the executable:
 
     ```bash
     ./exe
